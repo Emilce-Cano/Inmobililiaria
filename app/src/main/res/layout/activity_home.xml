@@ -14,7 +14,7 @@
         android:layout_marginStart="18dp"
         android:layout_marginTop="13dp"
         android:fontFamily="@font/roboto"
-        android:text="Selection House"
+        android:text="@string/tv_selection_house_home"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
