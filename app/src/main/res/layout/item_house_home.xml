@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/iv_item_rv_house_home"
-        android:layout_width="350dp"
-        android:layout_height="290dp"
+        android:layout_width="370"
+        android:layout_height="300"
         android:scaleType="fitXY"
         android:src="@drawable/image_house"
         app:layout_constraintEnd_toEndOf="parent"
