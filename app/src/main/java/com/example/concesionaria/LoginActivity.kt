@@ -1,11 +1,12 @@
 package com.example.concesionaria
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.widget.doAfterTextChanged
 import com.example.concesionaria.databinding.ActivityLoginBinding
+import com.example.concesionaria.UserAplication.Companion.data
 
 class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
@@ -16,6 +17,9 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         action()
+        data.clear()
+        init()
+        checkUserValues()
     }
 
     fun action() {
@@ -29,5 +33,24 @@ class LoginActivity : AppCompatActivity() {
         binding.loginEtNickName.doAfterTextChanged {
             viewModel.checkNickName(it.toString())
         }
+    }
+
+    fun checkUserValues() {
+        if (data.getName()!!.isNotEmpty()) {
+            goHome()
+        }
+    }
+
+    fun init() {
+        binding.loginLlEntry.setOnClickListener {
+            //mover estas dos lineas a true de la validacion
+            data.setName(binding.loginEtNickName.text.toString())
+            goHome()
+        }
+
+    }
+
+    fun goHome() {
+        startActivity(Intent(this, HomeActivity::class.java))
     }
 }
