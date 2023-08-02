@@ -7,6 +7,16 @@
     android:background="@color/bg_login"
     tools:context=".HomeActivity">
 
+    <ImageView
+        android:id="@+id/btn_logout"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tv_selection_house_home"
         android:layout_width="wrap_content"
