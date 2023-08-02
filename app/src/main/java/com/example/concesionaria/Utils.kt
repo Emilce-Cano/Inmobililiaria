@@ -16,6 +16,6 @@ object Utils {
         }
         return (nickName.isNotEmpty() && nickName.length < 20 && !nickName.contains(" ") && !nickName.contains(
             ","
-        ) && alphabetNickName)
+        ) && alphabetNickName)  
     }
 }
