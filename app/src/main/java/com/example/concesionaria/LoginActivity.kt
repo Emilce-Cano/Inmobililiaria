@@ -50,7 +50,15 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    fun goHome() {
-        startActivity(Intent(this, HomeActivity::class.java))
+    fun goHome(){
+        binding.loginLlEntry.setOnClickListener {
+            data.setName(binding.loginEtNickName.text.toString())
+            startActivity(Intent(this, HomeActivity::class.java))
+        }
     }
+
+
+
+
+
 }
