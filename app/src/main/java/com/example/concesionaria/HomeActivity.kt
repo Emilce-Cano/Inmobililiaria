@@ -14,11 +14,10 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        SetOnClick()
-        Toast.makeText(this, data.getName(), Toast.LENGTH_SHORT).show()
+        setOnClick()
     }
 
-    fun SetOnClick() {
+    fun setOnClick() {
         binding.btnLogout.setOnClickListener {
             data.clear()
             goToLogInView()
