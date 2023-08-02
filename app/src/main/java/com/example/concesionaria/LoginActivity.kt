@@ -14,13 +14,6 @@ class LoginActivity : AppCompatActivity() {
         binding= ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         SetOnClick()
-        checkUserValues()
-    }
-
-    fun checkUserValues(){
-        if(data.getName()!!.isNotEmpty()){
-            goToHomeView()
-        }
     }
     fun SetOnClick(){
         binding.loginLlEntry.setOnClickListener {

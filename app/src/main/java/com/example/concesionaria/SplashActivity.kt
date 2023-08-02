@@ -19,9 +19,11 @@ class SplashActivity : AppCompatActivity() {
             goToLogInView()
         }
     }
+
     fun goToLogInView(){
         startActivity(Intent(this, LoginActivity::class.java))
     }
+
     fun goToHomeView(){
         startActivity(Intent(this, HomeActivity::class.java))
     }
