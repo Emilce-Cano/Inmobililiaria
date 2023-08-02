@@ -3,4 +3,5 @@
     <string name="tv_entry_login">Entry</string>
     <string name="et_nick_name_login">Entry nick name</string>
     <string name="tv_selection_house_home">Selection House</string>
+    <string name="tv_measures_details">Measures:</string>
 </resources>
