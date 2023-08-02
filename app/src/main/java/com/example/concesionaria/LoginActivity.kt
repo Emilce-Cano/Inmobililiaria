@@ -27,20 +27,23 @@ class LoginActivity : AppCompatActivity() {
         }
         SetOnClick()
     }
+
     fun validateLogin() {
         binding.loginEtNickName.doAfterTextChanged {
             viewModel.checkNickName(it.toString())
         }
     }
 
-    fun SetOnClick(){
+    fun SetOnClick() {
         binding.loginLlEntry.setOnClickListener {
             data.setName(binding.loginEtNickName.text.toString())
             goToHomeView()
         }
 
     }
-    fun goToHomeView(){
+
+    fun goToHomeView() {
         startActivity(Intent(this, HomeActivity::class.java))
     }
 }
+
