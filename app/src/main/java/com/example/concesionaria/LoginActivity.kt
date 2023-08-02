@@ -13,7 +13,6 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         binding= ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        data.clear()
         init()
         checkUserValues()
     }
