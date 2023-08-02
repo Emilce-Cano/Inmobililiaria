@@ -7,5 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background_splash">#3B3F59</color>
+    <color name="bg_login">#3B3F59</color>
+    <color name="et_color_gray">#909090</color>
 </resources>
