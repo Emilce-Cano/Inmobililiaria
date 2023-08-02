@@ -13,15 +13,15 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         binding= ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        init()
+        SetOnClick()
     }
-    fun init() {
+    fun SetOnClick() {
         binding.btnLogout.setOnClickListener {
             data.clear()
-            goLogin()
+            goToLogInView()
         }
     }
-    fun goLogin(){
+    fun goToLogInView(){
         startActivity(Intent(this, LoginActivity::class.java))
     }
 }

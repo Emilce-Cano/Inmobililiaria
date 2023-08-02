@@ -13,25 +13,25 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         binding= ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        init()
+        SetOnClick()
         checkUserValues()
     }
 
     fun checkUserValues(){
         if(data.getName()!!.isNotEmpty()){
-            goHome()
+            goToHomeView()
         }
     }
-    fun init(){
+    fun SetOnClick(){
         binding.loginLlEntry.setOnClickListener {
             //mover estas dos lineas a true de la validacion
             data.setName(binding.loginEtNickName.text.toString())
-            goHome()
+            goToHomeView()
         }
 
     }
 
-    fun goHome(){
+    fun goToHomeView(){
         startActivity(Intent(this, HomeActivity::class.java))
     }
 }
