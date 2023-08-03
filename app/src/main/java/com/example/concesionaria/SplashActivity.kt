@@ -12,19 +12,20 @@ class SplashActivity : AppCompatActivity() {
         finish()
         checkUserValues()
     }
-    fun checkUserValues(){
-        if(UserAplication.data.getName()!!.isNotEmpty()){
+
+    fun checkUserValues() {
+        if (UserAplication.data.getName()!!.isNotEmpty()) {
             goToHomeView()
-        }else{
+        } else {
             goToLogInView()
         }
     }
 
-    fun goToLogInView(){
+    fun goToLogInView() {
         startActivity(Intent(this, LoginActivity::class.java))
     }
 
-    fun goToHomeView(){
+    fun goToHomeView() {
         startActivity(Intent(this, HomeActivity::class.java))
     }
 }

@@ -4,61 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsActivity"
-    android:background="@color/bg_login">
+    android:background="@color/bg_login"
+    tools:context=".DetailsActivity">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/details_rv_grid_rooms"
         android:layout_width="match_parent"
         android:layout_height="420dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="60dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_details_rooms" />
 
     <LinearLayout
         android:layout_width="250dp"
         android:layout_height="100dp"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginStart="40dp"
-        android:layout_marginBottom="150dp">
+        android:layout_marginBottom="150dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tv_measures_details"
+                android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"/>
+                android:textStyle="bold" />
+
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
                 android:textSize="18sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tv_color_details"
-                android:textStyle="bold"
+                android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textColor="@color/white" />
+                android:textStyle="bold" />
+
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"/>
+                android:maxLines="1"
+                android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
 
