@@ -6,4 +6,6 @@ import retrofit2.http.GET
 interface Service {
     @GET("/houses")
     suspend fun getRandomHouse(): HousesEnvironmentResponse
+    @GET("/houses/environment/{id}")
+    suspend fun getEnvironment(): HousesEnvironmentResponse
 }
