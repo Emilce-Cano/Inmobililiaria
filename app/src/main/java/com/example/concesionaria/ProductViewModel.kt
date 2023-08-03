@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 
-class ProductViewModel() : ViewModel() {
+class ProductViewModel(serviceImp: ServiceImp) : ViewModel() {
     val nickNameData = MutableLiveData<Boolean>(false)
 
     fun checkNickName(nickName: String) {
