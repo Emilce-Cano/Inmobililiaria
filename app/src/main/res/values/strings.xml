@@ -6,4 +6,8 @@
     <string name="tv_measures_details">Measures:</string>
     <string name="tv_color_details">Color:</string>
     <string name="iv_details_room">details room</string>
+    <string name="tv_title_description">Descripción: </string>
+    <string name="tv_description_state">Available</string>
+    <string name="tv_title_state">State: </string>
 </resources>
+
