@@ -43,6 +43,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tv_measure_room_details"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
@@ -64,6 +65,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tv_colour_room_details"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:maxLines="1"

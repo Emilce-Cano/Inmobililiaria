@@ -11,17 +11,20 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        binding= ActivityHomeBinding.inflate(layoutInflater)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         SetOnClick()
     }
+
     fun SetOnClick() {
         binding.btnLogout.setOnClickListener {
             data.clear()
             goToLogInView()
         }
     }
-    fun goToLogInView(){
+
+    fun goToLogInView() {
         startActivity(Intent(this, LoginActivity::class.java))
     }
 }
+
