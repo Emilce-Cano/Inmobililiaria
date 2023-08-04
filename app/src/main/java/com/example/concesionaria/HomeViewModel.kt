@@ -9,14 +9,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-class ProductViewModel(val serviceImp: ServiceImp = ServiceImp()) : ViewModel() {
-    val nickNameData = MutableLiveData<Boolean>(false)
+class HomeViewModel(private val serviceImp: ServiceImp = ServiceImp()) : ViewModel() {
+
+    val nickNameData = MutableLiveData<Boolean>()
+
+    val data = MutableLiveData<HousesResponse>()
+    val dataEnviroment = MutableLiveData<HousesEnvironmentResponse>()
+    val stateFavorite = MutableLiveData<Boolean>(false)
 
     fun checkNickName(nickName: String) {
         nickNameData.postValue(Utils.checkNickName(nickName))
     }
-
-    val data = MutableLiveData<HousesResponse>()
 
     fun getHouses() {
         CoroutineScope(Dispatchers.IO).launch {
@@ -27,11 +30,16 @@ class ProductViewModel(val serviceImp: ServiceImp = ServiceImp()) : ViewModel() 
         }
     }
 
-    val stateFavorite = MutableLiveData<Boolean>(false)
-
     fun stateStartFavorite(){
-
         stateFavorite.postValue()
     }
-}
 
+    fun getEnviroment(id: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val call = serviceImp.getEnvironment(id)
+            if (call.state != null) {
+                dataEnviroment.postValue(call)
+            }
+        }
+    }
+}

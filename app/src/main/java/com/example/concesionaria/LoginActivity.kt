@@ -3,20 +3,21 @@ package com.example.concesionaria
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.core.widget.doAfterTextChanged
 import com.example.concesionaria.databinding.ActivityLoginBinding
 import com.example.concesionaria.UserAplication.Companion.data
 
 class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
-    val viewModel by viewModels<ProductViewModel>()
+    private lateinit var viewModel: HomeViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        getViewModel()
         action()
     }
 
@@ -46,5 +47,8 @@ class LoginActivity : AppCompatActivity() {
         startActivity(Intent(this, HomeActivity::class.java))
     }
 
+    private fun getViewModel() {
+        viewModel = ViewModelFactory().create(HomeViewModel::class.java)
+    }
 }
 
