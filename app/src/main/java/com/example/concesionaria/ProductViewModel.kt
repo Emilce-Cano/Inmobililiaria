@@ -26,5 +26,12 @@ class ProductViewModel(val serviceImp: ServiceImp = ServiceImp()) : ViewModel() 
             }
         }
     }
+
+    val stateFavorite = MutableLiveData<Boolean>(false)
+
+    fun stateStartFavorite(){
+
+        stateFavorite.postValue()
+    }
 }
 

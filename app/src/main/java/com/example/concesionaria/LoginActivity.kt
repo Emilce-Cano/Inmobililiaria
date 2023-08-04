@@ -45,5 +45,6 @@ class LoginActivity : AppCompatActivity() {
     fun goToHomeView() {
         startActivity(Intent(this, HomeActivity::class.java))
     }
+
 }
 

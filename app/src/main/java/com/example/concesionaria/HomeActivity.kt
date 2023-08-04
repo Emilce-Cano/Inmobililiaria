@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.concesionaria.UserAplication.Companion.data
 import com.example.concesionaria.databinding.ActivityHomeBinding
+import com.example.concesionaria.databinding.ItemHouseHomeBinding
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -26,6 +27,9 @@ class HomeActivity : AppCompatActivity() {
 
     fun goToLogInView() {
         startActivity(Intent(this, LoginActivity::class.java))
+    }
+    fun starFavorites(){
+
     }
 }
 
