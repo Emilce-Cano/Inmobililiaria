@@ -12,11 +12,12 @@ import kotlinx.coroutines.launch
 class ProductViewModel(val serviceImp: ServiceImp = ServiceImp()) : ViewModel() {
     val nickNameData = MutableLiveData<Boolean>(false)
 
+    val data = MutableLiveData<HousesResponse>()
+    val dataEnviroment = MutableLiveData<HousesEnvironmentResponse>()
+
     fun checkNickName(nickName: String) {
         nickNameData.postValue(Utils.checkNickName(nickName))
     }
-
-    val data = MutableLiveData<HousesResponse>()
 
     fun getHouses() {
         CoroutineScope(Dispatchers.IO).launch {
@@ -26,5 +27,13 @@ class ProductViewModel(val serviceImp: ServiceImp = ServiceImp()) : ViewModel() 
             }
         }
     }
-}
 
+    fun getEnviroment(id: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val call = serviceImp.getEnvironment(id)
+            if (call.state != null) {
+                dataEnviroment.postValue(call)
+            }
+        }
+    }
+}
