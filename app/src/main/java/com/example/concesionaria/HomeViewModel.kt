@@ -15,7 +15,6 @@ class HomeViewModel(private val serviceImp: ServiceImp = ServiceImp()) : ViewMod
 
     val data = MutableLiveData<HousesResponse>()
     val dataEnviroment = MutableLiveData<HousesEnvironmentResponse>()
-    val stateFavorite = MutableLiveData<Boolean>(false)
 
     fun checkNickName(nickName: String) {
         nickNameData.postValue(Utils.checkNickName(nickName))
@@ -28,10 +27,6 @@ class HomeViewModel(private val serviceImp: ServiceImp = ServiceImp()) : ViewMod
                 data.postValue(call)
             }
         }
-    }
-
-    fun stateStartFavorite(){
-        stateFavorite.postValue()
     }
 
     fun getEnviroment(id: String) {
