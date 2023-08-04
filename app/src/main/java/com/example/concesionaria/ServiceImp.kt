@@ -23,7 +23,7 @@ class ServiceImp {
         return serviceImp.getEnvironment(id)
     }
 
-    suspend fun getDetails(id : String): EnvironmentDetailsResponse{
+    suspend fun getDetails(id: String): EnvironmentDetailsResponse {
         return serviceImp.getDetailsHouse(id)
     }
 }
