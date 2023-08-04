@@ -29,3 +29,4 @@ class SplashActivity : AppCompatActivity() {
         startActivity(Intent(this, HomeActivity::class.java))
     }
 }
+

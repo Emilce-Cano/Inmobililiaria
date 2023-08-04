@@ -18,7 +18,7 @@ class ServiceImp {
         return serviceImp.getAllHouses()
     }
 
-    suspend fun getEnvironment(id: String): HousesEnvironmentResponse{
+    suspend fun getEnvironment(id: String): HousesEnvironmentResponse {
         return serviceImp.getEnvironment(id)
     }
 }
