@@ -9,8 +9,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-class ProductViewModel(val serviceImp: ServiceImp = ServiceImp()) : ViewModel() {
-    val nickNameData = MutableLiveData<Boolean>(false)
+class HomeViewModel(private val serviceImp: ServiceImp = ServiceImp()) : ViewModel() {
+
+    val nickNameData = MutableLiveData<Boolean>()
 
     val data = MutableLiveData<HousesResponse>()
     val dataEnviroment = MutableLiveData<HousesEnvironmentResponse>()
