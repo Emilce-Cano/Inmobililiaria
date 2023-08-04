@@ -12,26 +12,25 @@ import kotlinx.coroutines.launch
 class ProductViewModel(val serviceImp: ServiceImp = ServiceImp()) : ViewModel() {
     val nickNameData = MutableLiveData<Boolean>(false)
 
+    val data = MutableLiveData<HousesResponse>()
+    val dataEnviroment = MutableLiveData<HousesEnvironmentResponse>()
+
     fun checkNickName(nickName: String) {
         nickNameData.postValue(Utils.checkNickName(nickName))
     }
-
     fun getHouses() {
         CoroutineScope(Dispatchers.IO).launch {
-            val data = MutableLiveData<HousesResponse>()
             val call = serviceImp.getHouses()
             if (call.houses != null) {
                 data.postValue(call)
             }
         }
     }
-
     fun getEnviroment(id: String) {
         CoroutineScope(Dispatchers.IO).launch {
-            val data = MutableLiveData<HousesEnvironmentResponse>()
             val call = serviceImp.getEnvironment(id)
             if (call.state != null) {
-                data.postValue(call)
+                dataEnviroment.postValue(call)
             }
         }
     }
