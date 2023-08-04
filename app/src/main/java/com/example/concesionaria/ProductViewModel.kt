@@ -9,13 +9,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-
 class ProductViewModel(val serviceImp: ServiceImp = ServiceImp()) : ViewModel() {
     val nickNameData = MutableLiveData<Boolean>(false)
 
     fun checkNickName(nickName: String) {
         nickNameData.postValue(Utils.checkNickName(nickName))
     }
+
     val data = MutableLiveData<HousesResponse>()
 
     fun getHouses() {
@@ -27,3 +27,4 @@ class ProductViewModel(val serviceImp: ServiceImp = ServiceImp()) : ViewModel() 
         }
     }
 }
+
