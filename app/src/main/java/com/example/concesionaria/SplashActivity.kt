@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     fun checkUserValues() {
-        if (UserAplication.data.getName()!!.isNotEmpty()) {
+        if (!UserAplication.data.getName()!!.isNullOrEmpty()) {
             goToHomeView()
         } else {
             goToLogInView()
