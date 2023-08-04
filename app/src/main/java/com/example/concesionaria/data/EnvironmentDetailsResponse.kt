@@ -6,3 +6,4 @@ data class EnvironmentDetailsResponse(
     val images: List<String>
 
 )
+
