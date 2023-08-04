@@ -3,7 +3,6 @@ package com.example.concesionaria
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.example.concesionaria.UserAplication.Companion.data
 import com.example.concesionaria.adapter.AdapterHome
 import com.example.concesionaria.data.ImageHouseData
@@ -20,23 +19,19 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-    fun setOnClick() {
+   private fun setOnClick() {
         binding.btnLogout.setOnClickListener {
             data.clear()
             goToLogInView()
         }
     }
 
-    fun goToLogInView() {
+   private fun goToLogInView() {
         startActivity(Intent(this, LoginActivity::class.java))
     }
 
     private fun initRecyclerView(listImage: List<ImageHouseData>){
         val adapter = AdapterHome(listImage)
         binding.rvHouseHome.adapter = adapter
-
     }
-
 }
-
-
