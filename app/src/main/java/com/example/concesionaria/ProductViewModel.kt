@@ -3,6 +3,7 @@ package com.example.concesionaria
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.concesionaria.data.HousesEnvironmentResponse
+import com.example.concesionaria.data.HousesResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -15,12 +16,12 @@ class ProductViewModel(val serviceImp: ServiceImp = ServiceImp()) : ViewModel() 
     fun checkNickName(nickName: String) {
         nickNameData.postValue(Utils.checkNickName(nickName))
     }
-    val data = MutableLiveData<HousesEnvironmentResponse>()
+    val data = MutableLiveData<HousesResponse>()
 
-    fun getOneHouse() {
+    fun getHouses() {
         CoroutineScope(Dispatchers.IO).launch {
-            val call = serviceImp.getOneHouse()
-            if (call.images != null) {
+            val call = serviceImp.getHouses()
+            if (call.houses != null) {
                 data.postValue(call)
             }
         }
