@@ -1,5 +1,6 @@
 package com.example.concesionaria
 
+import com.example.concesionaria.data.EnvironmentDetailsResponse
 import com.example.concesionaria.data.HousesEnvironmentResponse
 import com.example.concesionaria.data.HousesResponse
 import retrofit2.Retrofit
@@ -20,5 +21,9 @@ class ServiceImp {
 
     suspend fun getEnvironment(id: String): HousesEnvironmentResponse {
         return serviceImp.getEnvironment(id)
+    }
+
+    suspend fun getDetails(id: String): EnvironmentDetailsResponse {
+        return serviceImp.getDetailsHouse(id)
     }
 }
