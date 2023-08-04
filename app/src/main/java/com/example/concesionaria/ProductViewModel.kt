@@ -18,6 +18,7 @@ class ProductViewModel(val serviceImp: ServiceImp = ServiceImp()) : ViewModel() 
     fun checkNickName(nickName: String) {
         nickNameData.postValue(Utils.checkNickName(nickName))
     }
+
     fun getHouses() {
         CoroutineScope(Dispatchers.IO).launch {
             val call = serviceImp.getHouses()
@@ -26,6 +27,7 @@ class ProductViewModel(val serviceImp: ServiceImp = ServiceImp()) : ViewModel() 
             }
         }
     }
+
     fun getEnviroment(id: String) {
         CoroutineScope(Dispatchers.IO).launch {
             val call = serviceImp.getEnvironment(id)
