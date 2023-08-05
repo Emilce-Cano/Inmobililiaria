@@ -3,11 +3,10 @@ package com.example.concesionaria
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import com.example.concesionaria.UserAplication.Companion.data
-import com.example.concesionaria.adapter.AdapterHome
+import com.example.concesionaria.aplication.UserAplication.Companion.data
 import com.example.concesionaria.databinding.ActivityHomeBinding
-import com.example.concesionaria.databinding.ItemHouseHomeBinding
+import com.example.concesionaria.ui.home.viewmodel.HomeViewModel
+import com.example.concesionaria.ui.login.presenter.LoginActivity
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding

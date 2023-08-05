@@ -1,4 +1,4 @@
-package com.example.concesionaria.data
+package com.example.concesionaria.model.dto
 
 data class EnvironmentDetailsResponse(
     val measures: String,

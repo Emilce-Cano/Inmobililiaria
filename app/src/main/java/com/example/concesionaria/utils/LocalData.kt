@@ -1,4 +1,4 @@
-package com.example.concesionaria
+package com.example.concesionaria.utils
 
 import android.content.SharedPreferences
 import android.content.Context

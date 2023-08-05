@@ -1,6 +1,7 @@
-package com.example.concesionaria
+package com.example.concesionaria.aplication
 
 import android.app.Application
+import com.example.concesionaria.utils.LocalData
 
 class UserAplication : Application() {
     companion object {
