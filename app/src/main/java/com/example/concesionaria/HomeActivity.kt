@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.concesionaria.UserAplication.Companion.data
 import com.example.concesionaria.adapter.AdapterHome
-import com.example.concesionaria.data.ImageHouseData
+import com.example.concesionaria.data.HousesResponse
 import com.example.concesionaria.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -19,18 +19,18 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-   private fun setOnClick() {
+    private fun setOnClick() {
         binding.btnLogout.setOnClickListener {
             data.clear()
             goToLogInView()
         }
     }
 
-   private fun goToLogInView() {
+    private fun goToLogInView() {
         startActivity(Intent(this, LoginActivity::class.java))
     }
 
-    private fun initRecyclerView(listImage: List<ImageHouseData>){
+    private fun initRecyclerView(listImage: List<HousesResponse.Data>) {
         val adapter = AdapterHome(listImage)
         binding.rvHouseHome.adapter = adapter
     }
