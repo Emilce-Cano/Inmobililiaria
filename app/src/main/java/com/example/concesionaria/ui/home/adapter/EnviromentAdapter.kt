@@ -24,14 +24,11 @@ class EnvironmentAdapter(private val listOfEnviroment: List<ImageHouseData>) :
     override fun onBindViewHolder(holder: EnvironmentHolder, position: Int) {
         holder.render(listOfEnviroment[position])
     }
-
 }
 
 class EnvironmentHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val binding = ItemRvHomeEnvironmentsBinding.bind(view)
     fun render(value: ImageHouseData) {
-            Picasso.get().load(value.image).into(binding.ivItemRvHouseHome)
-
-
+        Picasso.get().load(value.image).into(binding.ivItemRvHouseHome)
     }
 }
