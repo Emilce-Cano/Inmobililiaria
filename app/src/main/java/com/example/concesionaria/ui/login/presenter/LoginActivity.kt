@@ -51,12 +51,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun getViewModel() {
-<<<<<<< HEAD:app/src/main/java/com/example/concesionaria/LoginActivity.kt
-        viewModel = ViewModelFactory().create(HomeViewModel::class.java)
-=======
-        viewModel =
-            HomeViewModelFactory().create(HomeViewModel::class.java)
->>>>>>> 7598b28c757e8a280e09bba68bff223ea41b6246:app/src/main/java/com/example/concesionaria/ui/login/presenter/LoginActivity.kt
+        viewModel = HomeViewModelFactory().create(HomeViewModel::class.java)
     }
 }
 
