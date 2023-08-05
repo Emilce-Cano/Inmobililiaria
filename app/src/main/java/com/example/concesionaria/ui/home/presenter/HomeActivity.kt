@@ -1,11 +1,13 @@
-package com.example.concesionaria
+package com.example.concesionaria.ui.home.presenter
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.concesionaria.UserAplication.Companion.data
-import com.example.concesionaria.adapter.AdapterHome
-import com.example.concesionaria.data.ImageHouseData
+import com.example.concesionaria.ui.login.presenter.LoginActivity
+import com.example.concesionaria.R
+import com.example.concesionaria.aplication.UserAplication.Companion.data
+import com.example.concesionaria.ui.home.adapter.AdapterHome
+import com.example.concesionaria.model.dto.ImageHouseData
 import com.example.concesionaria.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
