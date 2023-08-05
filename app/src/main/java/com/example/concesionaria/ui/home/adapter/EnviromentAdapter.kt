@@ -1,9 +1,10 @@
-package com.example.concesionaria
+package com.example.concesionaria.ui.home.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.concesionaria.R
 import com.example.concesionaria.databinding.ItemRvHomeEnvironmentsBinding
 import com.example.concesionaria.model.dto.ImageHouseData
 import com.squareup.picasso.Picasso
