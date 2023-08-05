@@ -1,8 +1,8 @@
-package com.example.concesionaria
+package com.example.concesionaria.model.service
 
-import com.example.concesionaria.data.EnvironmentDetailsResponse
-import com.example.concesionaria.data.HousesEnvironmentResponse
-import com.example.concesionaria.data.HousesResponse
+import com.example.concesionaria.model.dto.EnvironmentDetailsResponse
+import com.example.concesionaria.model.dto.HousesEnvironmentResponse
+import com.example.concesionaria.model.dto.HousesResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 

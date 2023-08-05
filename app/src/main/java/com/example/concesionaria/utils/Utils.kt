@@ -1,4 +1,4 @@
-package com.example.concesionaria
+package com.example.concesionaria.utils
 
 object Utils {
     fun checkNickName(nickName: String): Boolean {

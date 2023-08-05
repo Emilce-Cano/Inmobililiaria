@@ -1,4 +1,4 @@
-package com.example.concesionaria
+package com.example.concesionaria.ui.details.presenter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
