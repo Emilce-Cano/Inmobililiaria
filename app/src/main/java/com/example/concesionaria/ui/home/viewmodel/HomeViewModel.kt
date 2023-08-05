@@ -25,8 +25,8 @@ class HomeViewModel(private val serviceImp: Repository = Repository()) : ViewMod
     fun getHouses() {
         CoroutineScope(Dispatchers.IO).launch {
             val call = serviceImp.getHouses()
-            if (call.houses != null) {
-                data.postValue(call)
+            if (call.isSuccessful) {
+                data.postValue(call.body())
             }
         }
     }
