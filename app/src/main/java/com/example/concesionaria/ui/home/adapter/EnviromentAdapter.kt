@@ -12,7 +12,8 @@ import com.squareup.picasso.Picasso
 class EnvironmentAdapter(private val listOfEnviroment: List<ImageHouseData>) :
     RecyclerView.Adapter<EnvironmentHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EnvironmentHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_rv_home_environments, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_rv_home_environments, parent, false)
         return EnvironmentHolder(view)
     }
 
