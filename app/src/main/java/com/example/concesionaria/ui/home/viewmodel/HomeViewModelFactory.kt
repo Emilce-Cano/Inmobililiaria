@@ -1,9 +1,9 @@
-package com.example.concesionaria
+package com.example.concesionaria.ui.home.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-class ViewModelFactory : ViewModelProvider.Factory {
+class HomeViewModelFactory : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return HomeViewModel() as T
     }

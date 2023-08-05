@@ -1,12 +1,11 @@
-package com.example.concesionaria.adapter
+package com.example.concesionaria.ui.home.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.concesionaria.R
-import com.example.concesionaria.data.HousesResponse
-import com.example.concesionaria.data.ImageHouseData
+import com.example.concesionaria.model.dto.HousesResponse
 import com.example.concesionaria.databinding.ItemHouseHomeBinding
 import com.squareup.picasso.Picasso
 
@@ -30,7 +29,6 @@ class AdapterHome(private val houseList: List<HousesResponse.Data>) :
 class HomeHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ItemHouseHomeBinding.bind(view)
-
     fun render(value: HousesResponse.Data) {
         Picasso.get().load(value.image).into(binding.ivItemRvHouseHome)
     }

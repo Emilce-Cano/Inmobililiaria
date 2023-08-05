@@ -1,8 +1,10 @@
-package com.example.concesionaria
+package com.example.concesionaria.aplication
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.concesionaria.ui.home.presenter.HomeActivity
+import com.example.concesionaria.ui.login.presenter.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
