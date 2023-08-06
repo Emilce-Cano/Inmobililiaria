@@ -18,25 +18,35 @@ class DetailsActivity : AppCompatActivity() {
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        call()
+        observers()
+
     }
 
-    private fun detailsRecyclerView(list: List<EnvironmentDetailsResponse.Image>) {
-        val adapter = AdapterDetails(list)
-        binding.detailsRvGridRooms.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        binding.detailsRvGridRooms.adapter = adapter
-        binding.detailsRvGridRooms.layoutManager = GridLayoutManager(this, 2)
+    private fun call() {
+        viewModel.getDetails(getBundle())
     }
 
-    fun observers(){
-        viewModel.data.observe(this){
-            detailsRecyclerView(it.images)
+    private fun observers() {
+        viewModel.data.observe(this) {
+            //detailsRecyclerView(it.images)
             binding.tvMeasureRoomDetails.text = it.measures
             binding.tvColourRoomDetails.text = it.color
         }
 
     }
 
+    private fun getBundle(): String {
+        val bundle = intent.extras
+        val id = bundle?.getString("id")
+        return id.toString()
+    }
 
+    private fun detailsRecyclerView(list: List<EnvironmentDetailsResponse>) {
+        val adapter = AdapterDetails(list)
+        binding.detailsRvGridRooms.layoutManager = GridLayoutManager(this, 2)
+        binding.detailsRvGridRooms.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.detailsRvGridRooms.adapter = adapter
+    }
 }
-

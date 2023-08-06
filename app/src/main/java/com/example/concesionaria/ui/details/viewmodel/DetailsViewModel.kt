@@ -15,8 +15,8 @@ class DetailsViewModel (private val serviceImp: Repository = Repository()):ViewM
     fun getDetails(id: String) {
         CoroutineScope(Dispatchers.IO).launch {
             val call = serviceImp.getDetails(id)
-            if (call.images!= null) {
-                data.postValue(call)
+            if (call.isSuccessful) {
+                data.postValue(call.body())
             }
         }
     }

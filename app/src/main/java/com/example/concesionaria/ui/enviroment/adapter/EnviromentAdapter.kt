@@ -1,4 +1,4 @@
-package com.example.concesionaria.ui.home.adapter
+package com.example.concesionaria.ui.enviroment.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,10 @@ import com.example.concesionaria.databinding.ItemRvHomeEnvironmentsBinding
 import com.example.concesionaria.model.dto.ImageHouseData
 import com.squareup.picasso.Picasso
 
-class EnvironmentAdapter(private val listOfEnviroment: List<ImageHouseData>) :
+class EnvironmentAdapter(
+    private val listOfEnvironment: List<ImageHouseData>,
+    private val onClick: (ImageHouseData) -> Unit
+) :
     RecyclerView.Adapter<EnvironmentHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EnvironmentHolder {
         val view = LayoutInflater.from(parent.context)
@@ -18,17 +21,23 @@ class EnvironmentAdapter(private val listOfEnviroment: List<ImageHouseData>) :
     }
 
     override fun getItemCount(): Int {
-        return listOfEnviroment.size
+        return listOfEnvironment.size
     }
 
     override fun onBindViewHolder(holder: EnvironmentHolder, position: Int) {
-        holder.render(listOfEnviroment[position])
+        holder.render(listOfEnvironment[position], onClick)
     }
 }
 
 class EnvironmentHolder(view: View) : RecyclerView.ViewHolder(view) {
+
     private val binding = ItemRvHomeEnvironmentsBinding.bind(view)
-    fun render(value: ImageHouseData) {
+
+    fun render(value: ImageHouseData, onClick: (ImageHouseData) -> Unit) {
+
         Picasso.get().load(value.image).into(binding.ivItemRvHouseHome)
+        binding.root.setOnClickListener {
+            onClick(value)
+        }
     }
 }

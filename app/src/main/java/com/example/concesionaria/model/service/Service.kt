@@ -11,11 +11,11 @@ interface Service {
     @GET("houses")
     suspend fun getAllHouses(): Response<HousesResponse>
 
-    @GET("houses/environment/detail/{id}")
-    suspend fun getDetailsHouse(@Path("{id}") id: String): EnvironmentDetailsResponse
+    @GET("houses/environment/detail/{id}?")
+    suspend fun getDetailsHouse(@Path("id") id: String):Response<EnvironmentDetailsResponse>
 
-    @GET("houses/environment/{id}")
-    suspend fun getEnvironment(@Path("{id}") id: String): HousesEnvironmentResponse
+    @GET("houses/environment/{id}?")
+    suspend fun getEnvironment(@Path("id") id: String):Response<HousesEnvironmentResponse>
 
 
 }

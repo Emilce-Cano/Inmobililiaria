@@ -21,11 +21,11 @@ class Repository {
         return serviceImp.getAllHouses()
     }
 
-    suspend fun getEnvironment(id: String): HousesEnvironmentResponse {
+    suspend fun getEnvironment(id: String): Response<HousesEnvironmentResponse> {
         return serviceImp.getEnvironment(id)
     }
 
-    suspend fun getDetails(id: String): EnvironmentDetailsResponse {
+    suspend fun getDetails(id: String): Response<EnvironmentDetailsResponse> {
         return serviceImp.getDetailsHouse(id)
     }
 }
