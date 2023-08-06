@@ -26,8 +26,6 @@ class HomeActivity : AppCompatActivity() {
         observers()
         calls()
         setOnClick()
-        calls()
-        observers()
     }
 
     private fun setOnClick() {
