@@ -29,7 +29,7 @@ class DetailsActivity : AppCompatActivity() {
 
     private fun observers() {
         viewModel.data.observe(this) {
-            //detailsRecyclerView(it.images)
+            detailsRecyclerView(it.images)
             binding.tvMeasureRoomDetails.text = it.measures
             binding.tvColourRoomDetails.text = it.color
         }
@@ -42,11 +42,9 @@ class DetailsActivity : AppCompatActivity() {
         return id.toString()
     }
 
-    private fun detailsRecyclerView(list: List<EnvironmentDetailsResponse>) {
+    private fun detailsRecyclerView(list: List<String>) {
         val adapter = AdapterDetails(list)
         binding.detailsRvGridRooms.layoutManager = GridLayoutManager(this, 2)
-        binding.detailsRvGridRooms.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.detailsRvGridRooms.adapter = adapter
     }
 }

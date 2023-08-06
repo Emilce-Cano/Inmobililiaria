@@ -9,7 +9,7 @@ import com.example.concesionaria.databinding.ItemDetailsRoomsBinding
 import com.example.concesionaria.model.dto.EnvironmentDetailsResponse
 import com.squareup.picasso.Picasso
 
-class AdapterDetails(private val imageList: List<EnvironmentDetailsResponse>) :
+class AdapterDetails(private val imageList: List<String>) :
     RecyclerView.Adapter<DetailsHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailsHolder {
         val view =
@@ -30,9 +30,7 @@ class DetailsHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ItemDetailsRoomsBinding.bind(view)
 
-    fun render(value: EnvironmentDetailsResponse) {
-        Picasso.get()
-            .load("https://www.construyehogar.com/wp-content/uploads/2014/06/Dise%C3%B1o-de-dormitorio-moderno-con-pared-de-letras-Ng%E1%BB%8Dc-B%C3%A1u.jpg")
-            .into(binding.ivImage)
+    fun render(value: String) {
+        Picasso.get().load(value).into(binding.ivImage)
     }
 }
