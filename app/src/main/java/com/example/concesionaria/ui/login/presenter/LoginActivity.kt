@@ -31,11 +31,21 @@ class LoginActivity : AppCompatActivity() {
             binding.loginBtEntry.isEnabled = it
             if (!it) {
                 binding.loginBtEntry.setBackgroundResource(R.drawable.radius_blue_lite_off)
-                binding.loginBtEntry.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_login_home_off, 0)
+                binding.loginBtEntry.setCompoundDrawablesRelativeWithIntrinsicBounds(
+                    0,
+                    0,
+                    R.drawable.ic_login_home_off,
+                    0
+                )
             }
             if (it) {
                 binding.loginBtEntry.setBackgroundResource(R.drawable.radius_blue_lite_on)
-                binding.loginBtEntry.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_login_home_on, 0)
+                binding.loginBtEntry.setCompoundDrawablesRelativeWithIntrinsicBounds(
+                    0,
+                    0,
+                    R.drawable.ic_login_home_on,
+                    0
+                )
             }
         }
         setOnClick()
