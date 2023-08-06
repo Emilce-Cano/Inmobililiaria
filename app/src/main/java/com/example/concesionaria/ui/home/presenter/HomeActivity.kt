@@ -23,7 +23,6 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         observers()
         calls()
         setOnClick()

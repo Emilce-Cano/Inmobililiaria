@@ -1,4 +1,4 @@
-package com.example.concesionaria.ui.details.presenter.viewmodel
+package com.example.concesionaria.ui.details.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
