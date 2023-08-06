@@ -9,6 +9,7 @@ import com.example.concesionaria.model.dto.HousesResponse
 import com.example.concesionaria.databinding.ItemHouseHomeBinding
 import com.squareup.picasso.Picasso
 
+
 class AdapterHome(private val houseList: List<HousesResponse.Data>,private val onClick:(HousesResponse.Data)->Unit) :
     RecyclerView.Adapter<HomeHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeHolder {
@@ -36,7 +37,14 @@ class HomeHolder(view: View) : RecyclerView.ViewHolder(view) {
         binding.root.setOnClickListener {
             onClick(value)
         }
+        Picasso.get().load(value.image).into(binding.ivItemRvHouseHome)
+        binding.saveOffHome.setOnClickListener {
+            binding.saveOnHome.visibility = View.VISIBLE
+            binding.saveOffHome.visibility = View.GONE
+        }
+        binding.saveOnHome.setOnClickListener {
+            binding.saveOffHome.visibility = View.VISIBLE
+            binding.saveOnHome.visibility = View.GONE
+        }
     }
-
-
 }

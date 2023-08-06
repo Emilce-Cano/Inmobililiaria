@@ -51,8 +51,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun getViewModel() {
-        viewModel =
-            HomeViewModelFactory().create(HomeViewModel::class.java)
+        viewModel = HomeViewModelFactory().create(HomeViewModel::class.java)
     }
 }
 
