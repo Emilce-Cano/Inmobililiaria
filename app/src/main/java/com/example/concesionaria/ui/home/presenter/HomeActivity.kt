@@ -12,7 +12,6 @@ import com.example.concesionaria.ui.home.adapter.AdapterHome
 import com.example.concesionaria.databinding.ActivityHomeBinding
 import com.example.concesionaria.ui.enviroment.presenter.EnvironmentsActivity
 import com.example.concesionaria.ui.home.viewmodel.HomeViewModel
-import com.example.concesionaria.utils.Utils.ITEM
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -65,7 +64,8 @@ class HomeActivity : AppCompatActivity() {
         //binding.progressBar.visibility = View.GONE
         //binding.rvHouseHome.visibility = View.GONE
         //binding.tvError.visibility = View.VISIBLE
-        //binding.tvError.text = "Error al cargar datos. Inténtalo nuevamente."
+        //binding.tvError.text = "Error al cargar datos. In
+        // téntalo nuevamente."
     }
 
     private fun initRecyclerView(listImage: List<HousesResponse.Data>) {

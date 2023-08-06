@@ -9,7 +9,6 @@ import com.example.concesionaria.model.dto.ImageHouseData
 import com.example.concesionaria.ui.details.presenter.DetailsActivity
 import com.example.concesionaria.ui.enviroment.adapter.EnvironmentAdapter
 import com.example.concesionaria.ui.enviroment.viewmodel.EnvironmentViewModel
-import com.example.concesionaria.utils.Utils.ITEM
 
 class EnvironmentsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEnvironmentsBinding
@@ -23,6 +22,7 @@ class EnvironmentsActivity : AppCompatActivity() {
 
         calls(getBundle())
         observers()
+
     }
 
     private fun initRecyclerView(listImage: List<ImageHouseData>) {
