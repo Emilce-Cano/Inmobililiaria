@@ -9,7 +9,7 @@ import com.example.concesionaria.databinding.ItemDetailsRoomsBinding
 import com.example.concesionaria.model.dto.EnvironmentDetailsResponse
 import com.squareup.picasso.Picasso
 
-class AdapterDetails(private val imageList: List<EnvironmentDetailsResponse>) :
+class AdapterDetails(private val imageList: List<EnvironmentDetailsResponse.Image>) :
     RecyclerView.Adapter<DetailsHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailsHolder {
         val view =
@@ -30,7 +30,7 @@ class DetailsHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ItemDetailsRoomsBinding.bind(view)
 
-    fun render(value: EnvironmentDetailsResponse) {
-        Picasso.get().load(value.images.toString()).into(binding.ivImage)
+    fun render(value: EnvironmentDetailsResponse.Image) {
+        Picasso.get().load(value.image).into(binding.ivImage)
     }
 }
