@@ -24,9 +24,6 @@
             android:name=".ui.home.presenter.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.login.presenter.LoginActivity"
             android:exported="true" />
         <activity
