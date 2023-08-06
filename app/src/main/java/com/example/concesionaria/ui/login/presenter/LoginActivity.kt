@@ -24,10 +24,19 @@ class LoginActivity : AppCompatActivity() {
         getViewModel()
         action()
     }
+
     fun action() {
         validateLogin()
         viewModel.nickNameData.observe(this) {
             binding.loginLlEntry.isEnabled = it
+            if (!it) {
+                binding.loginLlEntry.setBackgroundResource(R.drawable.radius_blue_lite_off)
+                binding.loginVwHouse.setBackgroundResource(R.drawable.ic_login_home_off)
+            }
+            if (it) {
+                binding.loginLlEntry.setBackgroundResource(R.drawable.radius_blue_lite_on)
+                binding.loginVwHouse.setBackgroundResource(R.drawable.ic_login_home_on)
+            }
         }
         setOnClick()
     }

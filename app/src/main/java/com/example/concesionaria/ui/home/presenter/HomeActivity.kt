@@ -49,7 +49,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun observers() {
         viewModel.data.observe(this) {
-             initRecyclerView(it.houses)
+            initRecyclerView(it.houses)
         }
     }
 
@@ -64,7 +64,7 @@ class HomeActivity : AppCompatActivity() {
         //binding.rvHouseHome.visibility = View.GONE
         //binding.tvError.visibility = View.VISIBLE
         //binding.tvError.text = "Error al cargar datos. In
-    // téntalo nuevamente."
+        // téntalo nuevamente."
     }
 
     private fun initRecyclerView(listImage: List<HousesResponse.Data>) {
