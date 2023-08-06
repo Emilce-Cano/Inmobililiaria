@@ -22,7 +22,8 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setOnClick()
-
+        calls()
+        observers()
     }
 
     private fun setOnClick() {
@@ -48,7 +49,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun observers() {
         viewModel.data.observe(this) {
-            //initRecyclerView(it)
+            initRecyclerView(it.houses)
         }
     }
 
