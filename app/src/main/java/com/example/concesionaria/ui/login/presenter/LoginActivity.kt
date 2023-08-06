@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.widget.doAfterTextChanged
+import com.example.concesionaria.R
 import com.example.concesionaria.databinding.ActivityLoginBinding
 import com.example.concesionaria.aplication.UserAplication.Companion.data
 import com.example.concesionaria.ui.home.presenter.HomeActivity
@@ -23,7 +24,6 @@ class LoginActivity : AppCompatActivity() {
         getViewModel()
         action()
     }
-
     fun action() {
         validateLogin()
         viewModel.nickNameData.observe(this) {
