@@ -1,4 +1,4 @@
-package com.example.concesionaria.ui.home.viewmodel
+package com.example.concesionaria.ui.enviroment.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,13 +9,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class EnvironmentViewModel(private val serviceImp: Repository = Repository()) : ViewModel() {
-    val dataEnviroment = MutableLiveData<HousesEnvironmentResponse>()
+    val dataEnvironment = MutableLiveData<HousesEnvironmentResponse>()
 
-    fun getEnviroment(id: String) {
+    fun getEnvironment(id: String) {
         CoroutineScope(Dispatchers.IO).launch {
             val call = serviceImp.getEnvironment(id)
-            if (call.state != null) {
-                dataEnviroment.postValue(call)
+            if (call.isSuccessful) {
+                dataEnvironment.postValue(call.body())
             }
         }
     }

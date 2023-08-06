@@ -21,7 +21,7 @@ class Repository {
         return serviceImp.getAllHouses()
     }
 
-    suspend fun getEnvironment(id: String): HousesEnvironmentResponse {
+    suspend fun getEnvironment(id: Int): Response<HousesEnvironmentResponse> {
         return serviceImp.getEnvironment(id)
     }
 

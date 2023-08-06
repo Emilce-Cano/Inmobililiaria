@@ -12,6 +12,7 @@ import com.example.concesionaria.ui.home.adapter.AdapterHome
 import com.example.concesionaria.databinding.ActivityHomeBinding
 import com.example.concesionaria.ui.enviroment.presenter.EnvironmentsActivity
 import com.example.concesionaria.ui.home.viewmodel.HomeViewModel
+import com.example.concesionaria.utils.Utils.ITEM
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -75,7 +76,7 @@ class HomeActivity : AppCompatActivity() {
 
     private val goToDetails = fun(value: HousesResponse.Data) {
         val intent = Intent(this, EnvironmentsActivity::class.java)
-        intent.putExtra("id", value.id)
+        ITEM = value
         startActivity(intent)
     }
 }
