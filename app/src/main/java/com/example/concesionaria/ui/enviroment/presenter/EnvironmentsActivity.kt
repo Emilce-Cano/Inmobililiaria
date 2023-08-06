@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.concesionaria.databinding.ActivityEnvironmentsBinding
 import com.example.concesionaria.model.dto.ImageHouseData
+import com.example.concesionaria.ui.details.presenter.DetailsActivity
 import com.example.concesionaria.ui.enviroment.adapter.EnvironmentAdapter
 import com.example.concesionaria.ui.enviroment.viewmodel.EnvironmentViewModel
 import com.example.concesionaria.utils.Utils.ITEM
@@ -20,7 +21,7 @@ class EnvironmentsActivity : AppCompatActivity() {
         binding = ActivityEnvironmentsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        calls("1")
+        calls(getBundle())
         observers()
     }
 
@@ -44,7 +45,15 @@ class EnvironmentsActivity : AppCompatActivity() {
     private fun observers() {
         viewModel.dataEnvironment.observe(this) {
             initRecyclerView(it.images)
+            binding.tvTitleDescription.text = it.description
+            binding.tvTitleState.text = it.state
         }
+    }
+
+    fun getBundle():String{
+        val bundle = intent.extras
+        val id = bundle?.getString("id")
+        return id.toString()
     }
 
     private fun showSuccess() {
@@ -65,7 +74,7 @@ class EnvironmentsActivity : AppCompatActivity() {
     }
 
     private val goToDetails = fun(value: ImageHouseData) {
-        val intent = Intent(this, EnvironmentsActivity::class.java)
+        val intent = Intent(this, DetailsActivity::class.java)
         intent.putExtra("id", value.id)
         startActivity(intent)
     }

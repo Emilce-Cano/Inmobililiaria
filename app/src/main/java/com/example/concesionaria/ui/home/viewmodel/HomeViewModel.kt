@@ -16,7 +16,6 @@ class HomeViewModel(private val serviceImp: Repository = Repository()) : ViewMod
     val nickNameData = MutableLiveData<Boolean>()
 
     val data = MutableLiveData<HousesResponse>()
-    val dataEnviroment = MutableLiveData<HousesEnvironmentResponse>()
 
     fun checkNickName(nickName: String) {
         nickNameData.postValue(Utils.checkNickName(nickName))
@@ -27,15 +26,6 @@ class HomeViewModel(private val serviceImp: Repository = Repository()) : ViewMod
             val call = serviceImp.getHouses()
             if (call.isSuccessful) {
                 data.postValue(call.body())
-            }
-        }
-    }
-
-    fun getEnviroment(id: String) {
-        CoroutineScope(Dispatchers.IO).launch {
-            val call = serviceImp.getEnvironment(id)
-            if (call.state != null) {
-                dataEnviroment.postValue(call)
             }
         }
     }

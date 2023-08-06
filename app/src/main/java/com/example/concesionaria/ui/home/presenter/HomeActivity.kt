@@ -75,7 +75,7 @@ class HomeActivity : AppCompatActivity() {
 
     private val goToDetails = fun(value: HousesResponse.Data) {
         val intent = Intent(this, EnvironmentsActivity::class.java)
-        ITEM = value
+        intent.putExtra("id",value.id)
         startActivity(intent)
     }
 }
