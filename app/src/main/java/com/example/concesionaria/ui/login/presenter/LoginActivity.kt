@@ -28,14 +28,14 @@ class LoginActivity : AppCompatActivity() {
     fun action() {
         validateLogin()
         viewModel.nickNameData.observe(this) {
-            binding.loginLlEntry.isEnabled = it
+            binding.loginBtEntry.isEnabled = it
             if (!it) {
-                binding.loginLlEntry.setBackgroundResource(R.drawable.radius_blue_lite_off)
-                binding.loginVwHouse.setBackgroundResource(R.drawable.ic_login_home_off)
+                binding.loginBtEntry.setBackgroundResource(R.drawable.radius_blue_lite_off)
+                binding.loginBtEntry.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_login_home_off, 0)
             }
             if (it) {
-                binding.loginLlEntry.setBackgroundResource(R.drawable.radius_blue_lite_on)
-                binding.loginVwHouse.setBackgroundResource(R.drawable.ic_login_home_on)
+                binding.loginBtEntry.setBackgroundResource(R.drawable.radius_blue_lite_on)
+                binding.loginBtEntry.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_login_home_on, 0)
             }
         }
         setOnClick()
@@ -48,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun setOnClick() {
-        binding.loginLlEntry.setOnClickListener {
+        binding.loginBtEntry.setOnClickListener {
             data.setName(binding.loginEtNickName.text.toString())
             goToHomeView()
         }
@@ -60,8 +60,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun getViewModel() {
-        viewModel =
-            HomeViewModelFactory().create(HomeViewModel::class.java)
+        viewModel = HomeViewModelFactory().create(HomeViewModel::class.java)
     }
 }
 

@@ -11,6 +11,7 @@
         app:cardCornerRadius="20dp">
 
         <ImageView
+            android:id="@+id/iv_image"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:contentDescription="@string/iv_details_room"
