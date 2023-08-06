@@ -14,10 +14,10 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
+
     }
 
-   private fun detailsRecyclerView(list: List<EnvironmentDetailsResponse>) {
+    private fun detailsRecyclerView(list: List<EnvironmentDetailsResponse>) {
         val adapter = AdapterDetails(list)
         binding.detailsRvGridRooms.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
