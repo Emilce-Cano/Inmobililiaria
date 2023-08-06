@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
     fun action() {
         validateLogin()
         viewModel.nickNameData.observe(this) {
-            binding.loginLlEntry.isEnabled = it
+            binding.loginBtEntry.isEnabled = it
         }
         setOnClick()
     }
@@ -39,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun setOnClick() {
-        binding.loginLlEntry.setOnClickListener {
+        binding.loginBtEntry.setOnClickListener {
             data.setName(binding.loginEtNickName.text.toString())
             goToHomeView()
         }
