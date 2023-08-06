@@ -17,6 +17,7 @@ class EnvironmentsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEnvironmentsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
     }
 
     private fun initRecyclerView(listImage: List<ImageHouseData>) {

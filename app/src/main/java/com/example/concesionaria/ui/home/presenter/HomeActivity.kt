@@ -64,7 +64,8 @@ class HomeActivity : AppCompatActivity() {
         //binding.progressBar.visibility = View.GONE
         //binding.rvHouseHome.visibility = View.GONE
         //binding.tvError.visibility = View.VISIBLE
-        //binding.tvError.text = "Error al cargar datos. Inténtalo nuevamente."
+        //binding.tvError.text = "Error al cargar datos. In
+        // téntalo nuevamente."
     }
 
     private fun initRecyclerView(listImage: List<HousesResponse.Data>) {
