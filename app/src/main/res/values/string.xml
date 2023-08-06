@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="relation_evironments">xml: </string>
+    <string name="tv_title_state">State: </string>
+    <string name="tv_description_state">Available</string>
+    <string name="tv_title_description">Descripción: </string>
+
+    <string name="relations_details">xml:</string>
+    <string name="tv_measures_details">Measures:</string>
+    <string name="tv_color_details">Color:</string>
+    <string name="relations_home">xml</string>
+
+    <string name="tv_selection_house_home">Selection House</string>
+    <string name="relations_item_details">xml</string>
+    <string name="iv_details_room">details room</string>
+    <string name="relations_login">xml</string>
+
+    <string name="tv_entry_login">Entry</string>
+    <string name="et_nick_name_login">Entry nick name</string>
+    
+    <string name="app_name">Concesionaria</string>
+</resources>

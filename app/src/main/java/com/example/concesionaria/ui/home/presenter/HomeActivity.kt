@@ -10,6 +10,7 @@ import com.example.concesionaria.R
 import com.example.concesionaria.aplication.UserAplication.Companion.data
 import com.example.concesionaria.ui.home.adapter.AdapterHome
 import com.example.concesionaria.databinding.ActivityHomeBinding
+import com.example.concesionaria.ui.enviroment.presenter.EnvironmentsActivity
 import com.example.concesionaria.ui.home.viewmodel.HomeViewModel
 
 class HomeActivity : AppCompatActivity() {
@@ -21,8 +22,10 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setOnClick()
 
+        observers()
+        calls()
+        setOnClick()
     }
 
     private fun setOnClick() {
@@ -48,7 +51,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun observers() {
         viewModel.data.observe(this) {
-            //initRecyclerView(it)
+            initRecyclerView(it.houses)
         }
     }
 
@@ -66,7 +69,13 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView(listImage: List<HousesResponse.Data>) {
-        val adapter = AdapterHome(listImage)
+        val adapter = AdapterHome(listImage, onClick = { goToDetails.invoke(it) })
         binding.rvHouseHome.adapter = adapter
+    }
+
+    private val goToDetails = fun(value: HousesResponse.Data) {
+        val intent = Intent(this, EnvironmentsActivity::class.java)
+        intent.putExtra("id", value.id)
+        startActivity(intent)
     }
 }
