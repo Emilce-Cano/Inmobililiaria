@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class EnvironmentViewModel(private val serviceImp: Repository = Repository()) : ViewModel() {
-    private val dataEnviroment = MutableLiveData<HousesEnvironmentResponse>()
+    val dataEnviroment = MutableLiveData<HousesEnvironmentResponse>()
 
     fun getEnviroment(id: String) {
         CoroutineScope(Dispatchers.IO).launch {

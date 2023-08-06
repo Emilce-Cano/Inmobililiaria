@@ -2,18 +2,17 @@ package com.example.concesionaria.ui.enviroment.presenter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.activity.viewModels
 import com.example.concesionaria.databinding.ActivityEnvironmentsBinding
 import com.example.concesionaria.model.dto.ImageHouseData
 import com.example.concesionaria.ui.home.adapter.EnvironmentAdapter
-import com.example.concesionaria.ui.home.viewmodel.HomeViewModel
+import com.example.concesionaria.ui.home.viewmodel.EnvironmentViewModel
 
 class EnvironmentsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEnvironmentsBinding
 
     //cambiar a EnvironmentsViewModel cuando este preparado
-    private val viewModel by viewModels<HomeViewModel>()
+    private val viewModel by viewModels<EnvironmentViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +21,7 @@ class EnvironmentsActivity : AppCompatActivity() {
 
     }
 
-    private fun initRecyclerView(listImage : List<ImageHouseData>){
+    private fun initRecyclerView(listImage: List<ImageHouseData>) {
         val adapter = EnvironmentAdapter(listImage)
         binding.rvHouseEnvironments.adapter = adapter
     }
@@ -33,9 +32,9 @@ class EnvironmentsActivity : AppCompatActivity() {
         //binding.tvError.visibility = View.GONE
     }
 
-    private fun calls() {
+    private fun calls(id: String) {
         //cambiar a getEnvironments cuando este preparado
-        viewModel.getHouses()
+        viewModel.getEnviroment(id)
     }
 
     private fun observers() {
