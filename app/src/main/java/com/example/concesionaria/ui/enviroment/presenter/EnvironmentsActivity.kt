@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import com.example.concesionaria.databinding.ActivityEnvironmentsBinding
+import com.example.concesionaria.model.dto.ImageHouseData
+import com.example.concesionaria.ui.home.adapter.EnvironmentAdapter
 import com.example.concesionaria.ui.home.viewmodel.HomeViewModel
 
 class EnvironmentsActivity : AppCompatActivity() {
@@ -20,6 +22,11 @@ class EnvironmentsActivity : AppCompatActivity() {
 
     }
 
+    private fun initRecyclerView(listImage : List<ImageHouseData>){
+        val adapter = EnvironmentAdapter(listImage)
+        binding.rvHouseEnvironments.adapter = adapter
+    }
+
     private fun showLoading() {
         //binding.progressBar.visibility = View.VISIBLE
         //binding.rvEnvironments.visibility = View.GONE
@@ -32,8 +39,8 @@ class EnvironmentsActivity : AppCompatActivity() {
     }
 
     private fun observers() {
-        viewModel.data.observe(this) {
-            //initRecyclerView(it)
+        viewModel.dataEnviroment.observe(this) {
+            initRecyclerView(it.images)
         }
     }
 
@@ -41,7 +48,7 @@ class EnvironmentsActivity : AppCompatActivity() {
         //Sacar comentario cuando este preparado y probar
 
         //binding.progressBar.visibility = View.GONE
-        binding.rvHouseEnvironments.visibility = View.VISIBLE
+        //binding.rvHouseEnvironments.visibility = View.VISIBLE
         //binding.tvError.visibility = View.GONE
     }
 
