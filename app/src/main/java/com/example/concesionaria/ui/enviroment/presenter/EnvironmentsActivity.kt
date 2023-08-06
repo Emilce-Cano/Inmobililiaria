@@ -11,7 +11,6 @@ import com.example.concesionaria.ui.home.viewmodel.EnvironmentViewModel
 class EnvironmentsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEnvironmentsBinding
 
-    //cambiar a EnvironmentsViewModel cuando este preparado
     private val viewModel by viewModels<EnvironmentViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +32,6 @@ class EnvironmentsActivity : AppCompatActivity() {
     }
 
     private fun calls(id: String) {
-        //cambiar a getEnvironments cuando este preparado
         viewModel.getEnviroment(id)
     }
 
