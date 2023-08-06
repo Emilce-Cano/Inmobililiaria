@@ -7,6 +7,7 @@
     tools:context=".ui.login.presenter.LoginActivity">
 
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="-20dp"
@@ -23,28 +24,35 @@
         android:background="@color/bg_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login_bt_entry"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="45dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginHorizontal="80dp"
-        android:layout_marginBottom="80dp"
+        android:background="@drawable/radius_blue_lite"
+        android:drawableEnd="@drawable/ic_login_home"
         android:enabled="false"
+        android:paddingStart="25dp"
+        android:paddingEnd="10dp"
         android:text="@string/tv_entry_login"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:background="@drawable/radius_blue_lite"
-        android:drawableEnd="@drawable/ic_login_home"
-        android:paddingEnd="10dp"
-        android:paddingStart="25dp">
-    </androidx.appcompat.widget.AppCompatButton>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
 
     <EditText
         android:id="@+id/login_et_nick_name"
